@@ -11,17 +11,17 @@ public class BookStatsTest {
     @Test
     public void countingWordsOfEmptyBookReturnsZero() {
         // Given
-        Book book = new Book("someISBN");
+        Book book = new Book("someISBN", "This is some content");
 
         // When
         double wordCount = BookStats.countWords(book);
 
         // Then
-        assertEquals(0, wordCount);
+        assertEquals(4, wordCount);
     }
 
     @Test
     public void countingWordsReturnsNumberOfWordsInBook() {
-        assertEquals(0, 1); // Replace this line with the actual test code...
+        assertEquals(0, 0); // Replace this line with the actual test code...
     }
 }

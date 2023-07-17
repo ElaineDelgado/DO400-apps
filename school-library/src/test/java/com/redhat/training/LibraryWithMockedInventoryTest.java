@@ -1,9 +1,11 @@
 package com.redhat.training;
 
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+// import static org.mockito.Mockito.verify;
+// import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import com.redhat.training.books.BookNotAvailableException;
 import com.redhat.training.inventory.Inventory;
@@ -24,4 +26,14 @@ public class LibraryWithMockedInventoryTest {
     }
 
     // Add tests here...
-}
+    @Test
+    public void checkingOutWithdrawsFromInventoryWhenBookIsAvailable() 
+        throws BookNotAvailableException {
+            // Given    
+            when(inventory.isBookAvailable("book1")).thenReturn(true);    
+            // When    
+            library.checkOut("student1", "book1");    
+            // Then    
+            verify(inventory).withdraw("book1");
+        }
+    }
