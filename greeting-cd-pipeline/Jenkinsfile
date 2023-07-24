@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh '''
                 oc start-build greeting-metrics \
-                --follow --wait -n elainedelgado-metrics
+                --follow --wait -n hlhwpe-metrics
                 '''
             }
         }
